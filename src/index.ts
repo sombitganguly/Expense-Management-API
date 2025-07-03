@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import router from './routes/index';
+import router from './routes/main';
 import mongoose from 'mongoose';
 
 dotenv.config();
@@ -23,5 +23,3 @@ mongoose.connect(process.env.MONGO_URI as string)
         console.log("Failed to connect to DB: ", err);
         process.exit(1);
     });
-
-

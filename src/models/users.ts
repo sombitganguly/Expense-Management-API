@@ -16,8 +16,9 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     phone_no: {
-        type: Number,
-        unique: true
+        type: String,
+        unique: true,
+        sparse: true
     },
     role: {
         type: String,
@@ -26,47 +27,13 @@ const userSchema = new mongoose.Schema({
     },
     profile_pic: {
         type: String,
-        default: null
+        default: ""
     },
     status: {
         type: String,
         enum: ['ACTIVE', 'BANNED', 'DEACTIVATED'],
         default: 'ACTIVE'
-    },
-    is_verified: {
-        type: Boolean,
-        default: false
-    },
-    last_login: {
-        type: Date,
-        default: new Date()
-    },
-    otp: {
-        code: {
-            type: String
-        },
-        expires_at: {
-            type: Date
-        },
-        no_of_attempts: {
-            type: Number,
-            default: 0
-        },
-        next_attempt: {
-            type: Date
-        }
-    },
-    email_verification: {
-        code: {
-            type: String
-        },
-        expires_at: {
-            type: Date
-        }
-    },
-    refresh_tokens: {
-        type: [String]
-    },
+    }
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);
