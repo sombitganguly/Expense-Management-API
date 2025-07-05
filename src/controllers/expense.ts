@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import expenseServices from "../services/expense";
+import logger from "../config/logger";
 
 export const handlePersonalExpense = async(req : Request, res : Response) => {
     try {
@@ -20,6 +21,9 @@ export const handlePersonalExpense = async(req : Request, res : Response) => {
 
         res.status(200).json(response)
     } catch (error) {
-        console.log(error)
+        logger.error(error)
+        res.status(500).json({
+            message: "Internal server error"
+        })
     }
 }
