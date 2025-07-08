@@ -11,3 +11,25 @@
 {"level":"info","message":"Server is running on port 3000","timestamp":"2025-07-05T18:38:14.588Z"}
 {"level":"info","message":"Connected to DB","timestamp":"2025-07-05T18:38:15.263Z"}
 {"level":"error","timestamp":"2025-07-05T18:38:38.064Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-07-07T11:21:43.619Z"}
+{"level":"info","message":"Connected to DB","timestamp":"2025-07-07T11:21:44.365Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-07-08T20:11:25.745Z"}
+{"level":"info","message":"Connected to DB","timestamp":"2025-07-08T20:11:26.417Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2025-07-08T20:14:58.060Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-07-08T20:15:43.980Z"}
+{"level":"info","message":"Connected to DB","timestamp":"2025-07-08T20:15:44.487Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2025-07-08T20:15:51.453Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-07-08T20:17:14.784Z"}
+{"level":"info","message":"Connected to DB","timestamp":"2025-07-08T20:17:15.484Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2025-07-08T20:17:43.779Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-07-08T20:18:10.889Z"}
+{"level":"info","message":"Connected to DB","timestamp":"2025-07-08T20:18:11.402Z"}
+{"level":"info","message":{"accepted":["waltuhwhide@gmail.com"],"ehlo":["PIPELINING","8BITMIME","SMTPUTF8","AUTH LOGIN PLAIN"],"envelope":{"from":"karina.robel@ethereal.email","to":["waltuhwhide@gmail.com"]},"envelopeTime":586,"messageId":"<b45b1bc7-8b62-bc52-7501-bb02f30d02b3@ethereal.email>","messageSize":614,"messageTime":459,"rejected":[],"response":"250 Accepted [STATUS=new MSGID=aGt8om5F3rtNtDSraG19Ddmj0lJfvnfrAAAAAtNwIF.6mzpk.aUky8kKWgc]"},"timestamp":"2025-07-08T20:18:18.335Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-07-08T20:20:56.751Z"}
+{"level":"info","message":"Connected to DB","timestamp":"2025-07-08T20:20:57.391Z"}
+{"level":"info","message":"250 Accepted [STATUS=new MSGID=aGt8om5F3rtNtDSraG19zBukCcQCBHcCAAAAA2fBEQpyrPG-Rqzu-dqWLoM]","timestamp":"2025-07-08T20:21:29.476Z"}
+{"level":"info","message":["waltuhwhide@gmail.com"],"timestamp":"2025-07-08T20:21:29.477Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-07-08T20:23:06.259Z"}
+{"level":"info","message":"Connected to DB","timestamp":"2025-07-08T20:23:06.780Z"}
+{"level":"info","message":"250 Accepted [STATUS=new MSGID=aGt8om5F3rtNtDSraG1-Ntmj0lJfvno9AAAABGBqKQfNlU4SYmakhFTXn6k]","timestamp":"2025-07-08T20:23:15.472Z"}
+{"level":"info","message":["waltuhwhide@gmail.com"],"timestamp":"2025-07-08T20:23:15.473Z"}

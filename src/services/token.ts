@@ -8,7 +8,7 @@ interface Payload {
 }
 
 const generateRefreshToken = ({id, role} : Payload) => {
-    const token = jwt.sign({
+    const refreshToken = jwt.sign({
         id,
         role
     },
@@ -17,7 +17,7 @@ const generateRefreshToken = ({id, role} : Payload) => {
         expiresIn: '30d'
     })
 
-    return token
+    return refreshToken
 }
 
 const generateAccessToken = ({id, role} : Payload) => {
@@ -33,4 +33,17 @@ const generateAccessToken = ({id, role} : Payload) => {
     return accessToken
 }
 
-export default { generateRefreshToken, generateAccessToken }
+const generateVerificationToken = ({id, role} : Payload) => {
+    const verificationToken = jwt.sign({
+        id,
+        role
+    },
+    jwtsecret,
+    {
+        expiresIn: "10m"
+    })
+
+    return verificationToken
+}
+
+export default { generateRefreshToken, generateAccessToken, generateVerificationToken }

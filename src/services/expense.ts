@@ -13,15 +13,15 @@ const createPersonalExpense = async ({payerId, otherId, amount} : expense) => {
 
         const existing = await PersonalDebt.findOne({
             $or: [
-                {creditorId: payerId, debitorId: otherId},
-                {creditorId: otherId, debitorId: payerId}
+                {creditorId: new Types.ObjectId(payerId), debitorId: new Types.ObjectId(otherId)},
+                {creditorId: new Types.ObjectId(otherId), debitorId: new Types.ObjectId(payerId)}
             ]
         })
 
         if(!existing) {
             const newPersonalDebt = new PersonalDebt({
-                creditorId: payerId,
-                debitorId: otherId,
+                creditorId: new Types.ObjectId(payerId),
+                debitorId: new Types.ObjectId(otherId),
                 amount: splitAmount
             })
 
