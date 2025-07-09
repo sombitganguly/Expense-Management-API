@@ -22,8 +22,8 @@ const sendVerificationEmail = async ({id, role, email} : UserDetails) => {
 
         console.log(email)
         const token : string = tokenServices.generateVerificationToken({id, role})
-        const verificationLink : string = `http://localhost:3000/verify-email?token=${token}`
-
+        const verificationLink : string = `http://localhost:3000/api/v1/email-verification/verify-email?token=${token}`
+        console.log(token)
         const info = await transporter.sendMail({
             from: '"Karina Robel" <karina.robel@ethereal.email>',
             to: email,

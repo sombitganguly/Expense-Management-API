@@ -33,3 +33,26 @@ export const sendLink = async (req: Request, res: Response) => {
         })
     }
 }
+
+export const verifyEmail = async (req: Request, res: Response) => {
+    try{
+        const { id } = res.locals
+        const user = await User.findById(id)
+        console.log(id)
+        if(!user) {
+            res.status(404).json({
+                message: "User not found"
+            })
+            return
+        }
+        user.isEmailVerified = true
+        await user.save()
+
+        res.status(200).json({
+            message:"User has been verified successfully"
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
+}
