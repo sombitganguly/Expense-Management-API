@@ -5,11 +5,11 @@ import Token from "../models/tokens"
 
 export class RegisterError extends Error {
 
-    public statusCode : number
+    public status : number
 
-    constructor(message : string, statusCode : number) {
+    constructor(message : string, status : number) {
         super(message)
-        this.statusCode = statusCode
+        this.status = status
     }
 }
 

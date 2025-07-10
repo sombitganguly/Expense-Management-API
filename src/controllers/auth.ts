@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
-import authServices, { RegisterError } from '../services/auth';
+import { NextFunction, Request, Response } from 'express';
+import authServices from '../services/auth';
 
-export const registerUser = async (req : Request, res : Response) => {
+export const registerUser = async (req : Request, res : Response, next: NextFunction) => {
     try{
         const { username, email, password } = req.body
     
@@ -31,14 +31,11 @@ export const registerUser = async (req : Request, res : Response) => {
 
     }
     catch(err){
-        if (err instanceof RegisterError) res.status(409).json({
-            message: err.message,
-            statusCode: err.statusCode
-        })
+        next(err)
     }
 };
 
-export const loginUser = async (req : Request, res : Response) => {
+export const loginUser = async (req : Request, res : Response, next: NextFunction) => {
     try{
         const { email, password } = req.body
     
@@ -69,9 +66,6 @@ export const loginUser = async (req : Request, res : Response) => {
 
     }
     catch(err){
-        if (err instanceof RegisterError) res.status(409).json({
-            message: err.message,
-            statusCode: err.statusCode
-        })
+        next(err)
     }
 };

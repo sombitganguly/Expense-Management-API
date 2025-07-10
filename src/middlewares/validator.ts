@@ -9,9 +9,9 @@ export const validationMiddleware = (
     const errors = validationResult(req);
 
     if(!errors.isEmpty()){
+        const path = (errors.array()[0] as {path?: string}).path || "unknown"
         res.status(400).json({
-            errors: errors.array(),
-            message: "Incomplete/invalid fields provided"
+            message: `${errors.array()[0].msg} in field ${path}`,
         });
 
         return;

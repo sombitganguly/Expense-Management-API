@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import expenseServices from "../services/expense";
 import logger from "../config/logger";
 
-export const handlePersonalExpense = async(req : Request, res : Response) => {
+export const handlePersonalExpense = async(req : Request, res : Response, next: NextFunction) => {
     try {
         const { amount, description, payerId, otherId } = req.body
 
@@ -20,10 +20,7 @@ export const handlePersonalExpense = async(req : Request, res : Response) => {
         })
 
         res.status(200).json(response)
-    } catch (error) {
-        logger.error(error)
-        res.status(500).json({
-            message: "Internal server error"
-        })
+    } catch (err) {
+        next(err)
     }
 }

@@ -1,9 +1,8 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import User from "../models/users";
-import logger from "../config/logger";
 import emailServices from '../services/email'
 
-export const sendLink = async (req: Request, res: Response) => {
+export const sendLink = async (req: Request, res: Response, next: NextFunction) => {
     try{
         const { userId } = req.body
         const user = await User.findById(userId)
@@ -27,14 +26,11 @@ export const sendLink = async (req: Request, res: Response) => {
 
     }
     catch(err){
-        logger.error(err)
-        res.status(500).json({
-            message: "Failed to send link"
-        })
+        next(err)
     }
 }
 
-export const verifyEmail = async (req: Request, res: Response) => {
+export const verifyEmail = async (req: Request, res: Response, next: NextFunction) => {
     try{
         const { id } = res.locals
         const user = await User.findById(id)
@@ -53,6 +49,6 @@ export const verifyEmail = async (req: Request, res: Response) => {
         })
     }
     catch(err){
-        console.log(err)
+        next(err)
     }
 }

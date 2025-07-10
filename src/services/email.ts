@@ -2,6 +2,16 @@ import nodemailer from 'nodemailer'
 import tokenServices from './token'
 import logger from '../config/logger';
 
+export class EmailError extends Error {
+
+    public status : number
+
+    constructor(message : string, status: number) {
+        super(message)
+        this.status = status
+    }
+}
+
 interface UserDetails {
     id: string,
     email: string,
@@ -37,6 +47,7 @@ const sendVerificationEmail = async ({id, role, email} : UserDetails) => {
     catch(err) {
         logger.error(err)
         console.log(err)
+        throw new EmailError("Error sending verification email", 500)
     }
 }
 
